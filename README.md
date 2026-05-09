@@ -8,7 +8,7 @@ A responsive movie discovery app built with **React + Vite**, powered by the **T
 
 ## Live Demo
 
-> _(Add your deployed link here once hosted)_
+> https://moviepulse.vercel.app
 
 ---
 
