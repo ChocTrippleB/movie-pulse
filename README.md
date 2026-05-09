@@ -1,6 +1,6 @@
 # CineSearch
 
-> Discover what's trending, search any movie, and stay in the loop — no Netflix subscription needed.
+> Discover what's trending, search any movie, and stay in the loop, no Netflix subscription needed.
 
 A responsive movie discovery app built with **React + Vite**, powered by the **TMDB API** for real-time movie data and **Appwrite** as a backend to track the most-searched movies across all users.
 
@@ -55,7 +55,7 @@ Appwrite logs the search term + increments count
 Top 5 most-searched movies update in the trending carousel
 ```
 
-Appwrite stores each unique search term as a document with a `count` field. Every search either creates a new document or increments the existing one. The trending section queries the top 5 by count — meaning the trending list reflects real usage from every visitor.
+Appwrite stores each unique search term as a document with a `count` field. Every search either creates a new document or increments the existing one. The trending section queries the top 5 by count meaning the trending list reflects real usage from every visitor.
 
 ---
 
@@ -133,7 +133,7 @@ src/
 - Integrating a third-party REST API (TMDB) with `fetch` and Bearer token auth
 - Using Appwrite as a lightweight BaaS to persist and query data without a custom backend
 - Debouncing user input with `useDebounce` from `react-use` to avoid API spam
-- Building a search analytics system — tracking search frequency and surfacing trends
+- Building a search analytics system tracking search frequency and surfacing trends
 - Responsive UI design with Tailwind CSS v4 using a mobile-first grid approach
 - Clean state management with `useState` and `useEffect` in React 19
 
