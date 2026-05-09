@@ -2,6 +2,7 @@ import React, {useEffect, useState, use} from 'react'
 import Search from "./components/search.jsx";
 import Spinner from "./components/spinner.jsx";
 import MovieCard from "./components/MovieCard.jsx";
+import MovieDetail from "./components/MovieDetail.jsx";
 import {useDebounce} from "react-use";
 import {getTrendingMovies, updateSearchCount} from "./appwrite.js";
 
@@ -21,7 +22,8 @@ const App = () => {
     const [movieList, setMovieList] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [trendingMovies, setTrendingMovies] = useState([])
+    const [trendingMovies, setTrendingMovies] = useState([]);
+    const [selectedMovieId, setSelectedMovieId] = useState(null);
 
     const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
 
@@ -84,6 +86,10 @@ const App = () => {
     })
 
 
+    if (selectedMovieId) {
+        return <MovieDetail movieId={selectedMovieId} onClose={() => setSelectedMovieId(null)} onMovieSelect={setSelectedMovieId} />
+    }
+
     return (
         <main>
             <div className="pattern"/>
@@ -120,7 +126,7 @@ const App = () => {
                     ) : (
                         <ul>
                             {movieList.map((movie) => (
-                                <MovieCard movie={movie} key={movie.id} />
+                                <MovieCard movie={movie} key={movie.id} onClick={() => setSelectedMovieId(movie.id)} />
                             ))}
                         </ul>
                     )}
